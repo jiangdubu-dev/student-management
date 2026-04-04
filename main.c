@@ -7,7 +7,7 @@ typedef struct {
 } Student;
 
 void print_student(Student* s) {
-    printf("名前: %s 点数: %d\n", s->name, s->score);
+    printf("名前: %s 点数: %d 点\n", s->name, s->score);
 }
 
 // ① 全学生をファイルに保存する関数
