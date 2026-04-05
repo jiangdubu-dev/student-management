@@ -53,6 +53,7 @@ int main() {
         printf("1: 学生を登録\n");
         printf("2: 一覧を表示\n");
         printf("3: 保存して終了\n");
+        printf("4:学生を削除\n");
         printf("選択してください: ");
         scanf("%d", &choice);
 
@@ -74,6 +75,17 @@ int main() {
         else if (choice == 3) {
             save_students(students, count);  // 保存して終了
             break;
+        }
+        else if (choice == 4) {
+            printf("削除する番号を入力(1から%d): ", count);
+            int num;
+            scanf("%d", &num);
+            num--;  // 0始まりに変換
+            for (int i = num; i < count - 1; i++) {
+                students[i] = students[i + 1];  // 1個ずつ前にずらす
+            }
+            count--;
+            printf("削除しました！\n");
         }
     }
     return 0;
